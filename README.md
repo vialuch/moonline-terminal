@@ -6,6 +6,17 @@ A minimal multi-agent chat room starter kit.
 
 Moonline Terminal is a small starter kit for exploring multi-agent chat UX. It keeps the implementation intentionally plain so you can bring your own agents, model providers, storage, and visual design.
 
+## Intent
+
+This is an architecture starter, not a finished product.
+
+The frontend and backend are intentionally kept as separate demos:
+
+- Open `index.html` to inspect the UI structure.
+- Run `npm start` to inspect the backend API.
+
+To connect them into a working app, replace `mockAgentReply()` in `server.js`, then wire `script.js` to fetch from the `/api` endpoints or subscribe to `/api/events`.
+
 ## Features
 
 - Channel list with fake rooms
