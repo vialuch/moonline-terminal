@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f7f7">
+  <title>Moonline Terminal</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="status-bar">
+      <div class="brand">
+        <div class="mark">MT</div>
+        <div>
+          <h1>Moonline Terminal</h1>
+          <p>a minimal multi-agent chat prototype</p>
+        </div>
+      </div>
+      <div class="room-pill">
+        <b id="frequencyNumber">Room</b>
+        <span id="frequencyName">General</span>
+        <span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      </div>
+      <div class="status"><span class="lamp"></span> demo ready</div>
+      <button id="openTuner" class="mobile-toggle" type="button">Tuner</button>
+      <button id="openWall" class="mobile-toggle" type="button">Wall</button>
+    </header>
+
+    <div class="layout">
+      <aside id="tuner" class="panel tuner" aria-label="Room list">
+        <div class="panel-title">
+          <span>Channel Tuner</span>
+          <button class="close" data-close type="button">Close</button>
+        </div>
+        <div class="controls-placeholder" aria-hidden="true">
+          <div class="dial"></div>
+          <div class="scale">
+            <div class="scale-track"></div>
+            <div class="scale-labels"><span>A</span><span>B</span><span>C</span><span>D</span></div>
+          </div>
+        </div>
+        <div id="channelList" class="channel-list"></div>
+        <p class="hint">Channels are mock data. The structure is ready to connect to WebSocket later.</p>
+      </aside>
+
+      <main class="panel screen">
+        <div class="screen-head">
+          <div class="room-title">
+            <span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            <span id="roomTitle">General Room</span>
+          </div>
+          <div class="mode-switch">
+            <button class="active" data-mode="chat" type="button">Chat</button>
+            <button data-mode="brainstorm" type="button">Think</button>
+          </div>
+        </div>
+
+        <section id="messages" class="messages"></section>
+
+        <section class="composer">
+          <div id="agentStrip" class="agent-strip"></div>
+          <div class="inputbar">
+            <textarea id="text" placeholder="type a message..." rows="1"></textarea>
+            <button id="send" class="send" type="button"><span>Transmit</span></button>
+            <button id="live" class="live" type="button">Live</button>
+          </div>
+          <div id="statusText" class="status-text">Transmit is one round. Press Live to start; the same button becomes Stop.</div>
+        </section>
+      </main>
+
+      <aside id="wall" class="panel wall" aria-label="Room wall">
+        <div class="panel-title">
+          <span>Room Wall</span>
+          <button class="close" data-close type="button">Close</button>
+        </div>
+        <div id="memberList" class="member-list"></div>
+        <div class="note">
+          <div class="note-title">Pinned Note</div>
+          <p>This is a front-end prototype. It ships with sample agents, sample messages, and no private data.</p>
+        </div>
+        <div class="note">
+          <div class="note-title">Topic Of The Day</div>
+          <p>Can AI agents feel like people in the room instead of tools in a toolbar?</p>
+        </div>
+        <div class="wave-card">
+          <span>typing indicator placeholder...</span>
+          <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay"></div>
+  <div id="tuningOverlay" class="tuning-overlay" aria-hidden="true">
+    <div class="tuning-box">
+      <div id="tuningText">TUNING FREQUENCY</div>
+      <div class="tuning-line"></div>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

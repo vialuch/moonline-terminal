@@ -1,0 +1,11 @@
+{
+  "name": "moonline-terminal",
+  "version": "0.1.0",
+  "private": false,
+  "description": "A minimal multi-agent chat room starter kit.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "MIT"
+}
